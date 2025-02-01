@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 
-function Header() {          //대문자로 정의해야함
+function Header(props) {          //대문자로 정의해야함
+  console.log(props);
   return (
     <header>
-      <h1><a href="/">WEB</a></h1>
+      <h1><a href="/">{props.title}</a></h1>
     </header>
   )
 }
@@ -22,20 +23,20 @@ function Nav() {
   )
 }
 
-function Article() {
+function Article(props) {
   return (
     <article>
-      <h2>Welcome</h2>
-      Hello, WEB!
+      <h2>{props.title}</h2>
+      {props.body}, WEB!
     </article>
   )
 }
 function App() {
   return (
     <div>
-      <Header></Header>
+      <Header title="My React App"></Header>
       <Nav></Nav>
-      <Article></Article>
+      <Article title="WWWelcome" body="hello"></Article>
     </div>
   );
 }
